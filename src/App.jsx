@@ -14,6 +14,11 @@ import { INITIAL_REVIEWS } from './data/mockReviews';
 import { INITIAL_EVIDENCE } from './data/mockEvidence';
 import ReportPreviewPage from './pages/ReportPreviewPage';
 import ReportsRepositoryPage from './pages/ReportsRepositoryPage';
+import HistoryPage from './pages/HistoryPage';
+import RuleLibraryPage from './pages/RuleLibraryPage';
+import AnalyticsPage from './pages/AnalyticsPage';
+import AuditTrailPage from './pages/AuditTrailPage';
+import SettingsPage from './pages/SettingsPage';
 
 export function App() {
   const [currentPath, setCurrentPath] = useState('/dashboard');
@@ -198,17 +203,7 @@ export function App() {
           />
         );
 
-      // Review Detail Page with evaluationId parameter
-      if (currentPath.startsWith('/reviews/')) {
-        const evaluationId = currentPath.replace('/reviews/', '');
-        return (
-          <ReviewDetailPage
-            evaluationId={evaluationId}
-            reviews={INITIAL_REVIEWS}
-            onNavigate={handleNavigate}
-          />
-        );
-      }
+
 
       // Review Detail Page with evaluationId parameter
       if (currentPath.startsWith('/reviews/')) {
@@ -225,38 +220,22 @@ export function App() {
 
       case '/rules':
         return (
-          <PlaceholderModule 
-            moduleName="Rule Library (OIML R76 / Legal Metrology)" 
-            path="/rules"
-            onBackToDashboard={() => handleNavigate('/dashboard')} 
-          />
+          <RuleLibraryPage onNavigate={handleNavigate} />
         );
 
       case '/analytics':
         return (
-          <PlaceholderModule 
-            moduleName="Laboratory Workload Analytics" 
-            path="/analytics"
-            onBackToDashboard={() => handleNavigate('/dashboard')} 
-          />
+          <AnalyticsPage reviews={reviews} />
         );
 
-      case '/audit':
+      case '/audit-trail':
         return (
-          <PlaceholderModule 
-            moduleName="System Audit Trail & Calibration Log" 
-            path="/audit"
-            onBackToDashboard={() => handleNavigate('/dashboard')} 
-          />
+          <AuditTrailPage onNavigate={handleNavigate} />
         );
 
       case '/settings':
         return (
-          <PlaceholderModule 
-            moduleName="Workstation Settings" 
-            path="/settings"
-            onBackToDashboard={() => handleNavigate('/dashboard')} 
-          />
+          <SettingsPage onNavigate={handleNavigate} />
         );
 
       default:
