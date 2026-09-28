@@ -1,0 +1,163 @@
+// METRALAB - Central Rule Configuration Store
+// Reference Set: Prototype Rule Set — 2026.1
+// Legal Metrology & NAWI OIML R 76 Prototype Rule Definitions
+
+export const RULE_SET_INFO = {
+  version: "Prototype Rule Set — 2026.1",
+  status: "Prototype Configuration",
+  legalFramework: "Legal Metrology Act, 2009",
+  rules: "Legal Metrology (General) Rules, 2011",
+  technicalReference: "OIML Recommendation R 76",
+  verified: false,
+  verificationNote: "Not verified as an official OIML acceptance limit",
+  disclaimer: "Demonstration criteria are used to demonstrate the calculation and compliance workflow. Production deployment requires validated and version-controlled regulatory criteria."
+};
+
+export const MOCK_RULES = {
+  T1: {
+    ruleId: "PROTO-WGH-001",
+    testType: "Weighing Performance",
+    reference: "OIML R 76",
+    ruleVersion: "Prototype Rule Set — 2026.1",
+    applicability: "Class I, II, III, IIII NAWI",
+    calculationMethod: "Load point error calculation across capacity range",
+    acceptanceMethod: "Prototype Max Error Limit comparison",
+    criterion: "Maximum Absolute Error ≤ 0.5 kg (Demonstration Limit)",
+    criterionType: "prototype_demonstration",
+    maxAllowableLimit: 0.5,
+    unit: "kg",
+    status: "Prototype / Configured",
+    ruleStatus: "prototype",
+    criterionSource: "Demonstration Criterion",
+    verified: false,
+    effectiveDate: "2026-01-01",
+    sourceDocument: "Not configured",
+    notes: "Demonstration limit configured for prototype testing. Official OIML MPE depends on load range in e."
+  },
+
+  T2: {
+    ruleId: "PROTO-RPT-001",
+    testType: "Repeatability",
+    reference: "OIML R 76",
+    ruleVersion: "Prototype Rule Set — 2026.1",
+    applicability: "Class I, II, III, IIII NAWI",
+    calculationMethod: "Error Range (Max Error - Min Error) from 5 repeat observations",
+    acceptanceMethod: "Prototype Error Range comparison",
+    criterion: "Error Range ≤ 0.3 kg (Demonstration Limit)",
+    criterionType: "prototype_demonstration",
+    maxAllowableLimit: 0.3,
+    unit: "kg",
+    status: "Prototype / Configured",
+    ruleStatus: "prototype",
+    criterionSource: "Demonstration Criterion",
+    verified: false,
+    effectiveDate: "2026-01-01",
+    sourceDocument: "Not configured",
+    notes: "Demonstration limit configured for repeatability range."
+  },
+
+  T3: {
+    ruleId: "PROTO-ECC-001",
+    testType: "Eccentricity",
+    reference: "OIML R 76",
+    ruleVersion: "Prototype Rule Set — 2026.1",
+    applicability: "Class I, II, III, IIII NAWI",
+    calculationMethod: "Maximum deviation across 5 off-center positions",
+    acceptanceMethod: "Prototype Corner Deviation comparison",
+    criterion: "Maximum Deviation ≤ 0.4 kg (Demonstration Limit)",
+    criterionType: "prototype_demonstration",
+    maxAllowableLimit: 0.4,
+    unit: "kg",
+    status: "Prototype / Configured",
+    ruleStatus: "prototype",
+    criterionSource: "Demonstration Criterion",
+    verified: false,
+    effectiveDate: "2026-01-01",
+    sourceDocument: "Not configured",
+    notes: "Demonstration limit configured for 1/3 Max eccentricity test."
+  },
+
+  T4: {
+    ruleId: "PROTO-ZRO-001",
+    testType: "Zero Setting",
+    reference: "OIML R 76",
+    ruleVersion: "Prototype Rule Set — 2026.1",
+    applicability: "Class I, II, III, IIII NAWI",
+    calculationMethod: "Observed zero indication deviation after load removal",
+    acceptanceMethod: "Unconfigured Regulatory Criterion",
+    criterion: "Criterion not configured",
+    criterionType: "not_configured",
+    maxAllowableLimit: null,
+    unit: "kg",
+    status: "Not Configured",
+    ruleStatus: "unconfigured",
+    criterionSource: "Criterion not configured",
+    verified: false,
+    effectiveDate: null,
+    sourceDocument: "Not configured",
+    notes: "Requires formal regulatory zero-tracking rule verification before evaluation."
+  },
+
+  T5: {
+    ruleId: "PROTO-TAR-001",
+    testType: "Tare",
+    reference: "OIML R 76",
+    ruleVersion: "Prototype Rule Set — 2026.1",
+    applicability: "Class I, II, III, IIII NAWI",
+    calculationMethod: "Net Error (Gross - Tare - Reference Value)",
+    acceptanceMethod: "Prototype Net Error comparison",
+    criterion: "Maximum Net Error ≤ 0.3 kg (Demonstration Limit)",
+    criterionType: "prototype_demonstration",
+    maxAllowableLimit: 0.3,
+    unit: "kg",
+    status: "Prototype / Configured",
+    ruleStatus: "prototype",
+    criterionSource: "Demonstration Criterion",
+    verified: false,
+    effectiveDate: "2026-01-01",
+    sourceDocument: "Not configured",
+    notes: "Demonstration limit configured for tare subtraction accuracy."
+  },
+
+  T6: {
+    ruleId: "PROTO-CRP-001",
+    testType: "Creep",
+    reference: "OIML R 76",
+    ruleVersion: "Prototype Rule Set — 2026.1",
+    applicability: "Class I, II, III, IIII NAWI",
+    calculationMethod: "Sustained load change (End Indication - Start Indication) over 30 min",
+    acceptanceMethod: "Unconfigured Regulatory Criterion",
+    criterion: "Criterion not configured",
+    criterionType: "not_configured",
+    maxAllowableLimit: null,
+    unit: "kg",
+    status: "Not Configured",
+    ruleStatus: "unconfigured",
+    criterionSource: "Criterion not configured",
+    verified: false,
+    effectiveDate: null,
+    sourceDocument: "Not configured",
+    notes: "Creep acceptance limit requires temperature coefficient & load cell specification."
+  },
+
+  T7: {
+    ruleId: "PROTO-WRM-001",
+    testType: "Warm-up / Stabilization",
+    reference: "OIML R 76",
+    ruleVersion: "Prototype Rule Set — 2026.1",
+    applicability: "Class I, II, III, IIII NAWI",
+    calculationMethod: "Indication drift between initial power-on and 60 min stabilization",
+    acceptanceMethod: "Unconfigured Regulatory Criterion",
+    criterion: "Criterion not configured",
+    criterionType: "not_configured",
+    maxAllowableLimit: null,
+    unit: "kg",
+    status: "Not Configured",
+    ruleStatus: "unconfigured",
+    criterionSource: "Criterion not configured",
+    verified: false,
+    effectiveDate: null,
+    sourceDocument: "Not configured",
+    notes: "Warm-up drift criterion requires warm-up duration verification."
+  }
+};
